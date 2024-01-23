@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 def ingest_data():
-    dataset_path = input("Please enter the path to your dataset: ")
+    dataset_path = "/home/sigmoid/Downloads/retail_retail_based.csv"
     data = pd.read_csv(dataset_path)
     print(f"Data loaded from {dataset_path}")
     

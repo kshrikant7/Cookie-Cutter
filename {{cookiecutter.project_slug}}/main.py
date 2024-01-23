@@ -10,8 +10,10 @@ def main():
     check_data_quality(reference_data, current_data)
     check_data_drift(reference_data, current_data)
     model = train_model(current_data)
-    evaluate_model(model, reference_data)
-    predictions = make_prediction(model, reference_data)
+    X_test = reference_data.iloc[:, :-1]
+    y_test = reference_data.iloc[:, -1]
+    evaluate_model(model, X_test, y_test)
+    predictions = make_prediction(model, X_test)
     check_prediction_drift(predictions)
 
 if __name__ == "__main__":
